@@ -80,8 +80,11 @@ public class MemberController {
     }
 
     @PostMapping("/profile")
-    public String submitProfileForm(@ModelAttribute Member member) {
+    public String submitProfileForm(HttpServletRequest request, @ModelAttribute Member member) {
+        HttpSession session = request.getSession();
+        String id = (String) session.getAttribute("member-id");
         Optional<Member> pastEntry = service.getMember(member.getId());
+        member.setId(id);
 
         if (pastEntry.isEmpty()) {
             throw new ErrorResponseException(HttpStatus.GONE);
