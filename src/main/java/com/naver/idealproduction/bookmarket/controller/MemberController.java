@@ -31,6 +31,13 @@ public class MemberController {
 
     @PostMapping("/register")
     public String submitRegisterForm(@ModelAttribute Member member) {
+        String id = member.getId();
+        String pwd = member.getPassword();
+
+        if (id.length() < 6 || pwd.length() < 6 || service.exists(id)) {
+            throw new ErrorResponseException(HttpStatus.BAD_REQUEST);
+        }
+
         service.register(member);
         return "redirect:/";
     }
