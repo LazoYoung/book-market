@@ -1,12 +1,12 @@
-name: Checkout
-on: [push]
+name: Push action
+on:
+  push:
+    branches: [bleeding]
 jobs:
   checkout:
-    runs-on: self-hosted
+    runs-on: [self-hosted, linux, ARM64]
     steps:
-      - uses: actions/checkout@master
-        with:
-          ref: bleeding
+      - uses: actions/checkout@v3.3.0
       - run: chmod u+x ./gradlew
       - run: ./gradlew clean build
       - run: chmod u+x ./start.sh
