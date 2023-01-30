@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:insert="~{template :: header}"></th:block>
+<link href="/css/book.css" rel="stylesheet">
+<script src="/js/book.js"></script>
 <body>
 
 <page-info name="books"></page-info>
@@ -10,9 +12,12 @@
     <h1 class="text-center" th:text="${book.name}">Book name placeholder</h1>
 </div>
 
-<div class="container mx-auto my-5" style="max-width: 600px">
+<div id="book-content" class="container mx-auto my-5">
     <div class="row">
         <div class="col-md-12">
+            <p>
+                <a href="/books">&laquo Return</a>
+            </p>
             <p th:utext="${book.description}">Description placeholder</p>
             <br>
             <p><b>Code: </b><span class="badge bg-info" th:text="${book.id}"></span></p>
@@ -24,8 +29,7 @@
             <h4 th:text="'&#x20A9;' + ${#numbers.formatInteger(book.price,1,'DEFAULT')}">Price placeholder</h4>
             <br>
             <p>
-                <a class="btn btn-primary me-2" href="#">Order</a>
-                <a class="btn btn-secondary" href="/books">Browse</a>
+                <a id="cart-btn" class="btn btn-primary me-2" href="#">Add to cart</a>
             </p>
         </div>
     </div>

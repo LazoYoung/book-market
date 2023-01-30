@@ -25,8 +25,8 @@ public class MemberService {
     }
 
     public Optional<Member> getMember(HttpSession session) {
-        String id = (String) session.getAttribute("member-id");
-        return repository.getOne(id);
+        return Optional.ofNullable(session.getAttribute("member-id"))
+                .flatMap(obj -> repository.getOne((String) obj));
     }
 
     public Optional<Member> getMember(String id) {
@@ -34,15 +34,8 @@ public class MemberService {
     }
 
     public void supplyModelAttribute(HttpServletRequest request, Model model) {
-        HttpSession session = request.getSession(false);
-        Member member = null;
-
-        if (session != null) {
-            member = getMember(session).orElse(null);
-            if (member == null) {
-                session.invalidate();
-            }
-        }
+        HttpSession session = request.getSession();
+        Member member = getMember(session).orElse(null);
         model.addAttribute("member", member);
     }
 

@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:insert="~{template :: header}"></th:block>
 <script src="/js/member-login.js"></script>
+<link href="/css/member-login.css" rel="stylesheet">
 <body>
 
 <page-info name="login"></page-info>
@@ -11,8 +12,8 @@
     <h2 class="text-center">Sign into your account</h2>
 </div>
 
-<div class="container mx-auto" style="max-width: 320px">
-    <form id="login-form" action="/member/login" method="post" class="mb-5">
+<div id="login-content" class="container mx-auto">
+    <form id="login-form" action="/member/login" method="post" class="mb-3">
         <div class="mb-3">
             <label class="form-label" for="id">ID</label>
             <input class="form-control" type="text" id="id" name="id" aria-describedby="id-feedback" required>
@@ -24,8 +25,11 @@
             <div id="pwd-feedback" class="invalid-feedback">This field is required!</div>
         </div>
     </form>
-    <div class="d-grid mt-5 mb-3">
-        <button id="login-btn" class="btn btn-primary me-2">Login</button>
+    <div class="mb-3">
+        <a href="/member/register" id="sign-up">Sign up</a>
+    </div>
+    <div class="d-grid">
+        <button id="login-btn" class="btn btn-primary">Log in</button>
     </div>
 </div>
 

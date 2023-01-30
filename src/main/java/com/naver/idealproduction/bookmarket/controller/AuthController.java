@@ -43,11 +43,8 @@ public class AuthController {
 
     @PostMapping("/logout")
     public String requestLogout(HttpServletRequest request) {
-        var session = request.getSession(false);
-
-        if (session != null) {
-            session.invalidate();
-        }
+        var session = request.getSession();
+        session.removeAttribute("member-id");
         return "redirect:/";
     }
 

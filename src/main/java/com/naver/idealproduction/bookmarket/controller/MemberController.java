@@ -39,7 +39,7 @@ public class MemberController {
         }
 
         service.register(member);
-        return "redirect:/";
+        return "redirect:/member/login";
     }
 
     @GetMapping("/login")
@@ -68,35 +68,29 @@ public class MemberController {
 
     @GetMapping("/profile")
     public String getProfile(HttpServletRequest request, Model model) {
-        HttpSession session = request.getSession(false);
-        Member member = null;
+        HttpSession session = request.getSession();
+        Optional<Member> member = service.getMember(session);
 
-        if (session != null) {
-            member = service.getMember(session).orElse(null);
-        }
-
-        if (member == null) {
-            if (session != null) {
-                session.invalidate();
-            }
+        if (member.isEmpty()) {
+            session.setAttribute("member", null);
             return "redirect:/";
         }
 
-        model.addAttribute("member", member);
+        model.addAttribute("member", member.get());
         return "member-profile";
     }
 
     @PostMapping("/profile")
     public String submitProfileForm(HttpServletRequest request, @ModelAttribute Member member) {
         HttpSession session = request.getSession();
-        String id = (String) session.getAttribute("member-id");
+        Object id = session.getAttribute("member-id");
         Optional<Member> pastEntry = service.getMember(member.getId());
-        member.setId(id);
 
-        if (pastEntry.isEmpty()) {
-            throw new ErrorResponseException(HttpStatus.GONE);
+        if (id == null || pastEntry.isEmpty()) {
+            throw new ErrorResponseException(HttpStatus.BAD_REQUEST);
         }
 
+        member.setId((String) id);
         service.updateProfile(member);
         return "redirect:/";
     }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:insert="~{template :: header}"></th:block>
+<link href="/css/cart.css" rel="stylesheet">
+<body>
+
+<page-info name="cart"></page-info>
+<th:block th:insert="~{template :: navbar}"></th:block>
+
+<div class="container-fluid bg-light p-5">
+    <h2 class="text-center">Shopping Cart</h2>
+</div>
+
+<div id="cart-content" class="container mx-auto mt-5">
+    <p th:if="${#lists.isEmpty(bookList)}" class="text-center">
+        <b>Your shopping cart is empty!</b>
+    </p>
+
+    <table th:unless="${#lists.isEmpty(bookList)}">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="book : ${bookList}">
+            <td th:text="${book.id}">N/A</td>
+            <td th:text="${book.name}">N/A</td>
+            <td th:text="${book.price}">N/A</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

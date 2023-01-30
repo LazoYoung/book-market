@@ -63,7 +63,7 @@ async function fetch_account(input) {
     }
 
     let query = new URLSearchParams(param);
-    let fetch_url = url + query;
+    let fetch_url = url + query.toString();
     let response = await fetch(fetch_url);
 
     if (response.ok) {
