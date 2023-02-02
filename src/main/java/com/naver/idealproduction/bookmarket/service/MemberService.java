@@ -47,10 +47,10 @@ public class MemberService {
     }
 
     public void register(Member member) {
-        repository.add(member);
         String password = member.getPassword();
         String hash = produceHash(password);
-        repository.addPasswordHash(member.getId(), hash);
+        member.setPasswordHash(hash);
+        repository.add(member);
     }
 
     public void updateProfile(Member member) {
@@ -65,10 +65,8 @@ public class MemberService {
             member.setPassword(pastEntry.getPassword());
         } else {
             String hash = produceHash(member.getPassword());
-            repository.removePasswordHash(id);
-            repository.addPasswordHash(id, hash);
+            member.setPasswordHash(hash);
         }
-
         repository.remove(pastEntry);
         repository.add(member);
     }

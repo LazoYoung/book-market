@@ -1,22 +1,32 @@
 package com.naver.idealproduction.bookmarket.service;
 
 import com.naver.idealproduction.bookmarket.domain.Member;
-import com.naver.idealproduction.bookmarket.repository.MemberRepository;
-import com.naver.idealproduction.bookmarket.repository.MemoryMemberRepository;
+import com.naver.idealproduction.bookmarket.repository.JdbcMemberRepos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@SpringBootTest
+@Transactional
 class MemberServiceTest {
 
     private MemberService service;
+    private final DataSource dataSource;
+    @Autowired // DI 안됨
+    MemberServiceTest(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @BeforeEach
     void setup() {
-        MemberRepository repository = new MemoryMemberRepository();
+        JdbcMemberRepos repository = new JdbcMemberRepos(dataSource);
         service = new MemberService(repository);
     }
 

@@ -21,6 +21,16 @@ public class Member {
     private int sex = SEX_MALE;
     private List<String> hobbies = Collections.emptyList();
 
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    private String passwordHash = null;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
