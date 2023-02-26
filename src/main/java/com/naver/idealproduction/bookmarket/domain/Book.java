@@ -10,18 +10,25 @@ public class Book {
     private String id;
     private String name;
     private int price;
+    private long stock;
     private String author;
     private String description;
     private String publisher;
     private String category;
-    private long stock;
     private String releaseDate;
     private String condition;
 
-    public Book(@Nonnull String id, String name, int price) {
+    public Book(@Nonnull String id, String name, int price, long stock, String author, String description, String publisher, String category, String releaseDate, String condition) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.stock = stock;
+        this.author = author;
+        this.description = description;
+        this.publisher = publisher;
+        this.category = category;
+        this.releaseDate = releaseDate;
+        this.condition = condition;
     }
 
     public String getId() {

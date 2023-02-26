@@ -63,32 +63,21 @@ public class MemoryBookRepository implements BookRepository {
     }
 
     private void createBooks() {
-        Book book1 = new Book("ISBN1234", "C# 교과서", 30000);
-        book1.setAuthor("박용준");
-        book1.setDescription("""
+        Book book1 = new Book("ISBN1234", "C# 교과서", 30000, 473, "박용준",
+                """
                         C# 교과서는 생애 첫 프로그래밍 언어로 C#을 시작하는 독자를 대상으로 한다.
                         특히 응용 프로그래머를 위한 C# 입문서로, C#을 사용하여 게임(유니티), 웹, 모바일, IoT 등을
                         개발할 때 필요한 C# 기초 문법을 익히고 기본기를 탄탄하게 다지는 것이 목적이다.
-                        """);
-        book1.setPublisher("길벗");
-        book1.setCategory("IT전문서");
-        book1.setStock(473);
-        book1.setReleaseDate("2020/05/29");
-        Book book2 = new Book("ISBN1235", "Node.js 교과서", 36000);
-        book2.setAuthor("조현영");
-        book2.setDescription("""
+                        """, "길벗", "IT전문서", "2020/05/29", "신품");
+        Book book2 = new Book("ISBN1235", "Node.js 교과서", 36000, 512, "조현영",
+                """
                         이 책은 프런트부터 서버, 데이터베이스, 배포까지 아우르는 광범위한 내용을 다룬다.
                         군더더기 없는 직관적인 설명으로 기본 개념을 확실히 이해하고, 노드의 기능과 생태계를
                         사용해보면서 실제로 동작하는 서버를 만들어보자. 예제와 코드는 최신 문법을 사용했고
                         실무에 참고하거나 당장 적용할 수 있다.
-                        """);
-        book2.setPublisher("길벗");
-        book2.setCategory("IT전문서");
-        book2.setStock(512);
-        book2.setReleaseDate("2020/07/25");
-        Book book3 = new Book("ISBN1236", "어도비 XD CC 2020 무작정 따라하기", 17500);
-        book3.setAuthor("김두한");
-        book3.setDescription("""
+                        """, "길벗", "IT전문서", "2020/07/25", "신품");
+        Book book3 = new Book("ISBN1236", "어도비 XD CC 2020 무작정 따라하기", 17500, 350, "김두한",
+                """
                         어도비 XD 시작부터 제대로 배운다. 최신 CC 2020 기능을 수록한 가장 완벽한 입문 활용서.
                         어도비 XD CC 2020 버전 출시에 맞춰 새롭게 선보이는 〈어도비 XD CC 2020 무작정 따라하기〉는
                         사용자가 단 한 권으로, 쉽고 빠르게 어도비 XD를 배울 수 있도록 구성한 책이다.
@@ -96,12 +85,7 @@ public class MemoryBookRepository implements BookRepository {
                         〈어도비 XD CC 2020 무작정 따라하기〉는 UI/UX 디자인 작업 전 미리 알아두어야 할 이론을 익히고,
                         기본 기능과 예제를 무작정 따라하여 기초를 탄탄히 쌓을 수 있으며,
                         실무 예제를 따라하여 어도비 XD를 제대로 활용할 수 있도록 도와준다.
-                        """);
-        book3.setPublisher("길벗");
-        book3.setCategory("IT활용서");
-        book3.setStock(350);
-        book3.setReleaseDate("2019/05/29");
-
+                        """, "길벗", "IT활용서", "2019/05/29", "신품");
         list.add(book1);
         list.add(book2);
         list.add(book3);
