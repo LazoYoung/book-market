@@ -13,6 +13,7 @@ public class BookMarketApplication implements ServletContextInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BookMarketApplication.class, args);
+		
 	}
 
 	@Override
