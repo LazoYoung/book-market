@@ -1,10 +1,10 @@
-package com.naver.idealproduction.bookmarket.controller;
+package com.flylazo.bookmarket.controller;
 
-import com.naver.idealproduction.bookmarket.domain.Book;
-import com.naver.idealproduction.bookmarket.domain.BookItem;
-import com.naver.idealproduction.bookmarket.service.BookService;
-import com.naver.idealproduction.bookmarket.service.CartService;
-import com.naver.idealproduction.bookmarket.service.MemberService;
+import com.flylazo.bookmarket.domain.Book;
+import com.flylazo.bookmarket.domain.BookItem;
+import com.flylazo.bookmarket.service.BookService;
+import com.flylazo.bookmarket.service.CartService;
+import com.flylazo.bookmarket.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;

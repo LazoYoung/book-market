@@ -1,4 +1,4 @@
-package com.naver.idealproduction.bookmarket;
+package com.flylazo.bookmarket;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.SessionTrackingMode;

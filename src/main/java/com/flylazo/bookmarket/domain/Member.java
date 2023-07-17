@@ -1,4 +1,4 @@
-package com.naver.idealproduction.bookmarket.domain;
+package com.flylazo.bookmarket.domain;
 
 import jakarta.annotation.Nonnull;
 

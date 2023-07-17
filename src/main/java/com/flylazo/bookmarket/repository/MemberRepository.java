@@ -1,6 +1,6 @@
-package com.naver.idealproduction.bookmarket.repository;
+package com.flylazo.bookmarket.repository;
 
-import com.naver.idealproduction.bookmarket.domain.Member;
+import com.flylazo.bookmarket.domain.Member;
 
 import java.util.Optional;
 

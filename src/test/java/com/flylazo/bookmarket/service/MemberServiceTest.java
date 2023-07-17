@@ -1,8 +1,8 @@
-package com.naver.idealproduction.bookmarket.service;
+package com.flylazo.bookmarket.service;
 
-import com.naver.idealproduction.bookmarket.domain.Member;
-import com.naver.idealproduction.bookmarket.repository.MemberRepository;
-import com.naver.idealproduction.bookmarket.repository.MemoryMemberRepository;
+import com.flylazo.bookmarket.domain.Member;
+import com.flylazo.bookmarket.repository.MemberRepository;
+import com.flylazo.bookmarket.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

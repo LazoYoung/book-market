@@ -1,7 +1,7 @@
-package com.naver.idealproduction.bookmarket.service;
+package com.flylazo.bookmarket.service;
 
-import com.naver.idealproduction.bookmarket.domain.Member;
-import com.naver.idealproduction.bookmarket.repository.MemberRepository;
+import com.flylazo.bookmarket.repository.MemberRepository;
+import com.flylazo.bookmarket.domain.Member;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;

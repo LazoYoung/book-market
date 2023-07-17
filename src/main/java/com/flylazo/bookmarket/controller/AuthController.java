@@ -1,6 +1,6 @@
-package com.naver.idealproduction.bookmarket.controller;
+package com.flylazo.bookmarket.controller;
 
-import com.naver.idealproduction.bookmarket.service.MemberService;
+import com.flylazo.bookmarket.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

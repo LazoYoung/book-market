@@ -1,4 +1,4 @@
-package com.naver.idealproduction.bookmarket;
+package com.flylazo.bookmarket;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

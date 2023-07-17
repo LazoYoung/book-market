@@ -1,4 +1,4 @@
-package com.naver.idealproduction.bookmarket.service;
+package com.flylazo.bookmarket.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

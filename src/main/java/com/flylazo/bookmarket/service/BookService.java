@@ -1,7 +1,7 @@
-package com.naver.idealproduction.bookmarket.service;
+package com.flylazo.bookmarket.service;
 
-import com.naver.idealproduction.bookmarket.domain.Book;
-import com.naver.idealproduction.bookmarket.repository.BookRepository;
+import com.flylazo.bookmarket.domain.Book;
+import com.flylazo.bookmarket.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

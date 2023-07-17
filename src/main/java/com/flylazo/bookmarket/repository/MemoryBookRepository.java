@@ -1,6 +1,6 @@
-package com.naver.idealproduction.bookmarket.repository;
+package com.flylazo.bookmarket.repository;
 
-import com.naver.idealproduction.bookmarket.domain.Book;
+import com.flylazo.bookmarket.domain.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
