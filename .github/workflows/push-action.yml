@@ -10,4 +10,4 @@ jobs:
       - run: chmod u+x ./gradlew
       - run: ./gradlew clean build
       - run: chmod u+x ./start.sh
-      - run: ./start.sh ${{ secrets.SSH_PWD }}
+      - run: ./start.sh
